@@ -1,0 +1,24 @@
+{
+  "name": "cordova-plugin-CDVShyNavBar",
+  "version": "0.0.1",
+  "description": "Cordova CDVShyNavBar Plugin (Wrapper for TLYShyNavBar)",
+  "cordova": {
+    "id": "cordova-plugin-cdvshynavbar",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "ios",
+    "navigationbar",
+    "tlyshynavbar",
+    "cdvshynavbar",
+    "shynavbar",
+    "navbar",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "jrhee",
+  "license": "Apache 2.0"
+}

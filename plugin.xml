@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-cdvshynavbar" version="0.0.1">
+  <name>CDVShyNavBar</name>
+  <description>Cordova CDVShyNavBar Plugin (Wrapper for TLYShyNavBar)</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,ios,navigationbar,tlyshynavbar,cdvshynavbar,shynavbar,navbar</keywords>
+  <js-module src="www/CDVShyNavBar.js" name="CDVShyNavBar">
+    <clobbers target="cdvshynavbar" />
+  </js-module>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="Device">
+        <param name="ios-package" value="CDVShyNavBar"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/CDVShyNavBar.h" />
+    <source-file src="src/ios/CDVShyNavBar.m" />
+  </platform>
+</plugin>
