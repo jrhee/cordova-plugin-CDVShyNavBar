@@ -9,8 +9,8 @@
 #import <WebKit/WebKit.h>
 #import "Cordova/CDV.h"
 
-@interface ShyNavBar: CDVPlugin {
-    
+@interface CDVShyNavBar: CDVPlugin {
+    UINavigationController *navBarController
 }
 
 @end
