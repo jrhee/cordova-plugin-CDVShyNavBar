@@ -10,7 +10,7 @@
 #import "Cordova/CDV.h"
 
 @interface CDVShyNavBar: CDVPlugin {
-    UINavigationController *navBarController
+    UINavigationController *navBarController;
 }
 
 @end
