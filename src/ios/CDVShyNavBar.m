@@ -1,6 +1,6 @@
 //
 //  ShyNavBar.m
-//  
+//
 //
 //  Created by Jake Rhee on 10/25/16.
 //
@@ -8,14 +8,17 @@
 #import "CDVShyNavBar.h"
 #import <WebKit/WebKit.h>
 #import "Cordova/CDV.h"
-#import "TLYShyNavBarManager.h"
+#import "MainViewController.h"
+#import "TLYShyNavBar/TLYShyNavBarManager.h"
 
-@implementation CDVShyNavbar
+@implementation CDVShyNavBar
+
+@synthesize navBarController;
 
 - (void) pluginInitialize {
     
     // Get the rootViewController
-    UIViewController *mainViewController = (UIViewController *)[[[[UIApplication sharedApplication]delegate] window] rootViewController];
+    MainViewController *mainViewController = (MainViewController *)[[[[UIApplication sharedApplication]delegate] window] rootViewController];
     
     // Create NavigationBarController and attach the current rootViewController
     self.navBarController = [[UINavigationController alloc] initWithRootViewController: mainViewController];
@@ -24,13 +27,13 @@
     [[[[UIApplication sharedApplication]delegate] window] setRootViewController:navBarController];
     
     // Set the scrollView for the TLYShyNavBarManager
-    mainViewController.shyNavBarManager.scrollView = self.webView.scrolView;
+    mainViewController.shyNavBarManager.scrollView = self.webView.scrollView;
 }
 
 - (void) setTitle: (CDVInvokedUrlCommand*)command
 {
     NSString *title = [command.arguments objectAtIndex:0];
-    navBarController.topViewController.title = title;
+    self.navBarController.topViewController.title = title;
 }
 
 
