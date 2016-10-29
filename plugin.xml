@@ -16,8 +16,8 @@
       </feature>
     </config-file>
         
-    <source-file src="src/ios/TLYShyNavBar" compiler-flags="-IimageVS/Plugins/TLYShyNavBar"/>
-    <header-file src="src/ios/CDVShyNavBar.h" />
-    <source-file src="src/ios/CDVShyNavBar.m" />
+    <source-file src="src/ios/" target-dir="src/" />
+<!--    <header-file src="src/ios/CDVShyNavBar.h" />-->
+<!--    <source-file src="src/ios/CDVShyNavBar.m" />-->
   </platform>
 </plugin>
