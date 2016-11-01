@@ -16,8 +16,32 @@
       </feature>
     </config-file>
         
-<!--    <source-file src="src/ios/TLYShyNavBar" compiler-flags="-IimageVS/Plugins/TLYShyNavBar"/>-->
-    <source-file src="src/ios/TLYShyNavBar" />
+    <!--<source-file src="src/ios/TLYShyNavBar" compiler-flags="-IimageVS/Plugins/TLYShyNavBar"/>-->
+    <header-file src="src/ios/TLYShyNavBar/TLYShyNavBar.h" target-dir="TLYShyNavBar"/>
+    <header-file src="src/ios/TLYShyNavBar/TLYShyNavBarFade.h" target-dir="TLYShyNavBar"/>
+    <header-file src="src/ios/TLYShyNavBar/TLYShyNavBarManager.h" target-dir="TLYShyNavBar"/>
+    <source-file src="src/ios/TLYShyNavBar/TLYShyNavBarManager.m" target-dir="TLYShyNavBar"/>
+
+    <header-file src="src/ios/TLYShyNavBar/Categories/NSObject+TLYSwizzlingHelpers.h" target-dir="TLYShyNavBar/Categories"/>
+    <source-file src="src/ios/TLYShyNavBar/Categories/NSObject+TLYSwizzlingHelpers.m" target-dir="TLYShyNavBar/Categories"/>
+    <header-file src="src/ios/TLYShyNavBar/Categories/TLYDelegateProxy.h" target-dir="TLYShyNavBar/Categories"/>
+    <source-file src="src/ios/TLYShyNavBar/Categories/TLYDelegateProxy.m" target-dir="TLYShyNavBar/Categories"/>
+    <header-file src="src/ios/TLYShyNavBar/Categories/UIScrollView+Helpers.h" target-dir="TLYShyNavBar/Categories"/>
+    <source-file src="src/ios/TLYShyNavBar/Categories/UIScrollView+Helpers.m" target-dir="TLYShyNavBar/Categories"/>
+    <header-file src="src/ios/TLYShyNavBar/Categories/UIViewController+BetterLayoutGuides.h" target-dir="TLYShyNavBar/Categories"/>
+    <source-file src="src/ios/TLYShyNavBar/Categories/UIViewController+BetterLayoutGuides.m" target-dir="TLYShyNavBar/Categories"/>
+
+    <header-file src="src/ios/TLYShyNavBar/TLYShyChild.h" target-dir="TLYShyNavBar/ShyControllers"/>
+    <header-file src="src/ios/TLYShyNavBar/TLYShyParent.h" target-dir="TLYShyNavBar/ShyControllers"/>
+    <header-file src="src/ios/TLYShyNavBar/TLYShyScrollViewController.h" target-dir="TLYShyNavBar/ShyControllers"/>
+    <source-file src="src/ios/TLYShyNavBar/TLYShyScrollViewController.m" target-dir="TLYShyNavBar/ShyControllers"/>
+    <header-file src="src/ios/TLYShyNavBar/TLYShyStatusBarController.h" target-dir="TLYShyNavBar/ShyControllers"/>
+    <source-file src="src/ios/TLYShyNavBar/TLYShyStatusBarController.m" target-dir="TLYShyNavBar/ShyControllers"/>
+    <header-file src="src/ios/TLYShyNavBar/TLYShyViewController.h" target-dir="TLYShyNavBar/ShyControllers"/>
+    <source-file src="src/ios/TLYShyNavBar/TLYShyViewController.m" target-dir="TLYShyNavBar/ShyControllers"/>
+
+
+
     <header-file src="src/ios/CDVShyNavBar.h" />
     <source-file src="src/ios/CDVShyNavBar.m" />
   </platform>
