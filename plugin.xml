@@ -31,14 +31,14 @@
     <header-file src="src/ios/TLYShyNavBar/Categories/UIViewController+BetterLayoutGuides.h" target-dir="TLYShyNavBar/Categories"/>
     <source-file src="src/ios/TLYShyNavBar/Categories/UIViewController+BetterLayoutGuides.m" target-dir="TLYShyNavBar/Categories"/>
 
-    <header-file src="src/ios/TLYShyNavBar/TLYShyChild.h" target-dir="TLYShyNavBar/ShyControllers"/>
-    <header-file src="src/ios/TLYShyNavBar/TLYShyParent.h" target-dir="TLYShyNavBar/ShyControllers"/>
-    <header-file src="src/ios/TLYShyNavBar/TLYShyScrollViewController.h" target-dir="TLYShyNavBar/ShyControllers"/>
-    <source-file src="src/ios/TLYShyNavBar/TLYShyScrollViewController.m" target-dir="TLYShyNavBar/ShyControllers"/>
-    <header-file src="src/ios/TLYShyNavBar/TLYShyStatusBarController.h" target-dir="TLYShyNavBar/ShyControllers"/>
-    <source-file src="src/ios/TLYShyNavBar/TLYShyStatusBarController.m" target-dir="TLYShyNavBar/ShyControllers"/>
-    <header-file src="src/ios/TLYShyNavBar/TLYShyViewController.h" target-dir="TLYShyNavBar/ShyControllers"/>
-    <source-file src="src/ios/TLYShyNavBar/TLYShyViewController.m" target-dir="TLYShyNavBar/ShyControllers"/>
+    <header-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyChild.h" target-dir="TLYShyNavBar/ShyControllers"/>
+    <header-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyParent.h" target-dir="TLYShyNavBar/ShyControllers"/>
+    <header-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyScrollViewController.h" target-dir="TLYShyNavBar/ShyControllers"/>
+    <source-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyScrollViewController.m" target-dir="TLYShyNavBar/ShyControllers"/>
+    <header-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyStatusBarController.h" target-dir="TLYShyNavBar/ShyControllers"/>
+    <source-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyStatusBarController.m" target-dir="TLYShyNavBar/ShyControllers"/>
+    <header-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyViewController.h" target-dir="TLYShyNavBar/ShyControllers"/>
+    <source-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyViewController.m" target-dir="TLYShyNavBar/ShyControllers"/>
 
 
 
