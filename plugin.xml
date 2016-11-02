@@ -15,9 +15,7 @@
         <param name="onload" value="true" />
       </feature>
     </config-file>
-        
-    <!--<source-file src="src/ios/TLYShyNavBar" compiler-flags="-IimageVS/Plugins/TLYShyNavBar"/>-->
-    <source-file src="src/ios/TLYShyNavBar" target-dir="TLYShyNavBar"/>
+
     <header-file src="src/ios/TLYShyNavBar/TLYShyNavBar.h" target-dir="TLYShyNavBar"/>
     <header-file src="src/ios/TLYShyNavBar/TLYShyNavBarFade.h" target-dir="TLYShyNavBar"/>
     <header-file src="src/ios/TLYShyNavBar/TLYShyNavBarManager.h" target-dir="TLYShyNavBar"/>
@@ -41,8 +39,7 @@
     <header-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyViewController.h" target-dir="TLYShyNavBar/ShyControllers"/>
     <source-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyViewController.m" target-dir="TLYShyNavBar/ShyControllers"/>
 
-
-
+    
     <header-file src="src/ios/CDVShyNavBar.h" />
     <source-file src="src/ios/CDVShyNavBar.m" />
   </platform>
