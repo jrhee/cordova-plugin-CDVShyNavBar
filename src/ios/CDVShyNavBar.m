@@ -36,6 +36,47 @@
     self.navBarController.topViewController.title = title;
 }
 
+- (void)setupLeftButton:(CDVInvokedUrlCommand*)command
+{
+    NSLog(@"SetupLeftButton");
+    
+    NSString *title = [command argumentAtIndex:0];
+    NSString *imageName = [command argumentAtIndex:1];
+    NSDictionary *options = [command argumentAtIndex:2];
+    
+    self.navBarController.topViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(leftButtonTapped)];
+}
 
+- (void) leftButtonTapped
+{
+    UIWebView *uiwebview = nil;
+    if ([self.webView isKindOfClass:[UIWebView class]]) {
+        uiwebview = ((UIWebView*)self.webView);
+    }
+    
+    NSString * jsCallBack = @"cdvShyNavBar.leftButtonTapped();";
+    [uiwebview stringByEvaluatingJavaScriptFromString:jsCallBack];
+}
+
+
+- (UIBarButtonItem*)makeButton: (NSString*)title imageName:(NSString*)imageName actionOnSelf:(SEL)actionOnSelf
+{
+    UIBarButtonItem *button = nil;
+    
+    if (title && title.length > 0)
+    {
+        button = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:actionOnSelf];
+    }
+    else if (imageName && imageName.length > 0)
+    {
+        button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:imageName] style:UIBarButtonItemStylePlain target:self action:actionOnSelf];
+    }
+    else
+    {
+        NSLog(@"Invalid button parameters");
+    }
+    
+    return button;
+}
 
 @end
