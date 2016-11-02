@@ -1,4 +1,3 @@
-cordova.define("cordova-plugin-CDVShyNavBar.CDVShyNavBar", function(require, exports, module) {
 
 /*
 *
@@ -21,69 +20,68 @@ cordova.define("cordova-plugin-CDVShyNavBar.CDVShyNavBar", function(require, exp
 *
 */
 
-  var exec = require('cordova/exec');
-  var platform = require('cordova/platform');
+var exec = require('cordova/exec');
+var platform = require('cordova/platform');
 
-  /**
-   * Provides access to notifications on the device.
-   */
-  module.exports = {
+/**
+ * Provides access to notifications on the device.
+ */
+module.exports = {
 
 
-    show: function() {
-      exec(null, null, "CDVShyNavBar", "show", [style, options]);
-    },
+  show: function() {
+    exec(null, null, "CDVShyNavBar", "show", [style, options]);
+  },
 
-    hide: function() {
-      exec(null, null, "CDVShyNavBar", "hide", []);
-    },
+  hide: function() {
+    exec(null, null, "CDVShyNavBar", "hide", []);
+  },
 
-    setTitle: function(title) {
-      exec(null, null, "CDVShyNavBar", "setTitle", [title]);
-    },
+  setTitle: function(title) {
+    exec(null, null, "CDVShyNavBar", "setTitle", [title]);
+  },
 
-    hideLeftButton: function(style, options) {
-      exec(null, null, "CDVShyNavBar", "hideLeftButton", [style, options]);
-    },
+  hideLeftButton: function(style, options) {
+    exec(null, null, "CDVShyNavBar", "hideLeftButton", [style, options]);
+  },
 
-    hideRightButton: function(style, options) {
-      exec(null, null, "CDVShyNavBar", "hideRightButton", [style, options]);
-    },
+  hideRightButton: function(style, options) {
+    exec(null, null, "CDVShyNavBar", "hideRightButton", [style, options]);
+  },
 
-    showLeftButton: function(style, options) {
-      exec(null, null, "CDVShyNavBar", "showLeftButton", [style, options]);
-    },
+  showLeftButton: function(style, options) {
+    exec(null, null, "CDVShyNavBar", "showLeftButton", [style, options]);
+  },
 
-    showRightButton: function(style, options) {
-      exec(null, null, "CDVShyNavBar", "showRightButton", [style, options]);
-    },
+  showRightButton: function(style, options) {
+    exec(null, null, "CDVShyNavBar", "showRightButton", [style, options]);
+  },
 
-    setupLeftButton: function(title, image, thefunction) {
-      this.leftButtonCallback = thefunction;
-      exec(null, null, "CDVShyNavBar", "setupLeftButton", [title, image, thefunction]);
-    },
+  setupLeftButton: function(title, image, thefunction) {
+    this.leftButtonCallback = thefunction;
+    exec(null, null, "CDVShyNavBar", "setupLeftButton", [title, image, thefunction]);
+  },
 
-    setupRightButton: function(title, image, thefunction) {
-      this.rightButtonCallback = thefunction;
-      exec(null, null, "CDVShyNavBar", "setupRightButton", [title, image, thefunction]);
-    },
+  setupRightButton: function(title, image, thefunction) {
+    this.rightButtonCallback = thefunction;
+    exec(null, null, "CDVShyNavBar", "setupRightButton", [title, image, thefunction]);
+  },
 
-    setLeftButtonEnabled: function(enabled) {
-      exec(null, null, "CDVShyNavBar", "setLeftButtonEnabled", [enabled]);
-    },
+  setLeftButtonEnabled: function(enabled) {
+    exec(null, null, "CDVShyNavBar", "setLeftButtonEnabled", [enabled]);
+  },
 
-    setRightButtonEnabled: function(enabled) {
-      exec(null, null, "CDVShyNavBar", "setRightButtonEnabled", [enabled]);
-    },
+  setRightButtonEnabled: function(enabled) {
+    exec(null, null, "CDVShyNavBar", "setRightButtonEnabled", [enabled]);
+  },
 
-    leftButtonTapped: function() {
-      if(typeof(this.leftButtonCallback) === "function")
-        this.leftButtonCallback()
-    },
+  leftButtonTapped: function() {
+    if(typeof(this.leftButtonCallback) === "function")
+      this.leftButtonCallback()
+  },
 
-    rightButtonTapped: function() {
-      if(typeof(this.rightButtonCallback) === "function")
-        this.rightButtonCallback()
-    },
-  }
-});
+  rightButtonTapped: function() {
+    if(typeof(this.rightButtonCallback) === "function")
+      this.rightButtonCallback()
+  },
+}
