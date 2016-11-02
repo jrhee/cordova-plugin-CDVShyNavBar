@@ -6,7 +6,7 @@
   <license>Apache 2.0</license>
   <keywords>cordova,ios,navigationbar,tlyshynavbar,cdvshynavbar,shynavbar,navbar</keywords>
   <js-module src="www/CDVShyNavBar.js" name="CDVShyNavBar">
-    <clobbers target="cdvshynavbar" />
+    <clobbers target="cdvShyNavBar" />
   </js-module>
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
@@ -39,7 +39,7 @@
     <header-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyViewController.h" target-dir="TLYShyNavBar/ShyControllers"/>
     <source-file src="src/ios/TLYShyNavBar/ShyControllers/TLYShyViewController.m" target-dir="TLYShyNavBar/ShyControllers"/>
 
-    
+
     <header-file src="src/ios/CDVShyNavBar.h" />
     <source-file src="src/ios/CDVShyNavBar.m" />
   </platform>
