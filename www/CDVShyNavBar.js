@@ -28,33 +28,8 @@ var platform = require('cordova/platform');
  */
 module.exports = {
 
-
-  show: function() {
-    exec(null, null, "CDVShyNavBar", "show", [style, options]);
-  },
-
-  hide: function() {
-    exec(null, null, "CDVShyNavBar", "hide", []);
-  },
-
   setTitle: function(title) {
     exec(null, null, "CDVShyNavBar", "setTitle", [title]);
-  },
-
-  hideLeftButton: function(style, options) {
-    exec(null, null, "CDVShyNavBar", "hideLeftButton", [style, options]);
-  },
-
-  hideRightButton: function(style, options) {
-    exec(null, null, "CDVShyNavBar", "hideRightButton", [style, options]);
-  },
-
-  showLeftButton: function(style, options) {
-    exec(null, null, "CDVShyNavBar", "showLeftButton", [style, options]);
-  },
-
-  showRightButton: function(style, options) {
-    exec(null, null, "CDVShyNavBar", "showRightButton", [style, options]);
   },
 
   setupLeftButton: function(title, image, thefunction) {

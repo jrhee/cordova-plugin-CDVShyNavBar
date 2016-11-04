@@ -14,8 +14,10 @@
 @implementation CDVShyNavBar
 
 @synthesize navBarController;
+@synthesize leftButton;
+@synthesize rightButton;
 
-- (void) pluginInitialize {
+- (void)pluginInitialize {
     
     // Get the rootViewController
     MainViewController *mainViewController = (MainViewController *)[[[[UIApplication sharedApplication]delegate] window] rootViewController];
@@ -30,24 +32,31 @@
     mainViewController.shyNavBarManager.scrollView = self.webView.scrollView;
 }
 
-- (void) setTitle: (CDVInvokedUrlCommand*)command
+- (void)setTitle: (CDVInvokedUrlCommand*)command
 {
     NSString *title = [command.arguments objectAtIndex:0];
     self.navBarController.topViewController.title = title;
 }
 
+//
+// setup Buttons
+//
+
 - (void)setupLeftButton:(CDVInvokedUrlCommand*)command
 {
-    NSLog(@"SetupLeftButton");
-    
     NSString *title = [command argumentAtIndex:0];
     NSString *imageName = [command argumentAtIndex:1];
-    NSDictionary *options = [command argumentAtIndex:2];
-    
-    self.navBarController.topViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(leftButtonTapped)];
+    self.leftButton = [self makeButton: title imageName:imageName actionOnSelf:@selector(leftButtonTapped)];
 }
 
-- (void) leftButtonTapped
+- (void)setupRightButton:(CDVInvokedUrlCommand*)command
+{
+    NSString *title = [command argumentAtIndex:0];
+    NSString *imageName = [command argumentAtIndex:1];
+    self.rightButton = [self makeButton: title imageName:imageName actionOnSelf:@selector(rightButtonTapped)];
+}
+
+- (void)leftButtonTapped
 {
     UIWebView *uiwebview = nil;
     if ([self.webView isKindOfClass:[UIWebView class]]) {
@@ -58,6 +67,16 @@
     [uiwebview stringByEvaluatingJavaScriptFromString:jsCallBack];
 }
 
+- (void)rightButtonTapped
+{
+    UIWebView *uiwebview = nil;
+    if ([self.webView isKindOfClass:[UIWebView class]]) {
+        uiwebview = ((UIWebView*)self.webView);
+    }
+    
+    NSString * jsCallBack = @"cdvShyNavBar.leftButtonTapped();";
+    [uiwebview stringByEvaluatingJavaScriptFromString:jsCallBack];
+}
 
 - (UIBarButtonItem*)makeButton: (NSString*)title imageName:(NSString*)imageName actionOnSelf:(SEL)actionOnSelf
 {
@@ -77,6 +96,43 @@
     }
     
     return button;
+}
+
+- (void)setLeftButtonEnabled:(CDVInvokedUrlCommand*)command
+{
+    if (self.leftButton)
+    {
+        id enabled = [command.arguments objectAtIndex:0];
+        self.leftButton.enabled = [enabled boolValue];
+    }
+}
+
+- (void)setRightButtonEnabled:(CDVInvokedUrlCommand*)command
+{
+    if (self.rightButton)
+    {
+        id enabled = [command.arguments objectAtIndex:0];
+        self.rightButton.enabled = [enabled boolValue];
+    }
+}
+
+- (UIBarButtonItem*)leftButton
+{
+    return self.navBarController.topViewController.navigationItem.leftBarButtonItem;
+}
+- (void)setLeftButton:(UIBarButtonItem *)newBtn
+{
+    self.navBarController.topViewController.navigationItem.leftBarButtonItem = newBtn;
+}
+
+- (UIBarButtonItem*) rightButton
+{
+    return self.navBarController.topViewController.navigationItem.rightBarButtonItem;
+}
+
+- (void)setRightButton:(UIBarButtonItem *)newBtn
+{
+    self.navBarController.topViewController.navigationItem.rightBarButtonItem = newBtn;
 }
 
 @end

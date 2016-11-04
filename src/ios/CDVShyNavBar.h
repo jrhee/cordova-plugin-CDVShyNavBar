@@ -12,5 +12,18 @@
 @interface CDVShyNavBar: CDVPlugin
 
 @property UINavigationController *navBarController;
+@property UIBarButtonItem *leftButton;
+@property UIBarButtonItem *rightButton;
+
+- (void)setTitle:(CDVInvokedUrlCommand*)command;
+
+- (void)setupLeftButton:(CDVInvokedUrlCommand*)command;
+- (void)setupRightButton:(CDVInvokedUrlCommand*)command;
+
+- (void)leftButtonTapped;
+- (void)rightButtonTapped;
+
+- (void)setLeftButtonEnabled:(CDVInvokedUrlCommand*)command;
+- (void)setRightButtonEnabled:(CDVInvokedUrlCommand*)command;
 
 @end
