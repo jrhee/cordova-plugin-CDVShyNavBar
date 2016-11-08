@@ -6,9 +6,6 @@
 //
 //
 #import "CDVShyNavBar.h"
-#import <WebKit/WebKit.h>
-#import "Cordova/CDV.h"
-#import "MainViewController.h"
 #import "TLYShyNavBar/TLYShyNavBarManager.h"
 
 @implementation CDVShyNavBar
@@ -18,16 +15,16 @@
 @synthesize rightButton;
 
 - (void)pluginInitialize {
-    
+
     // Get the rootViewController
-    MainViewController *mainViewController = (MainViewController *)[[[[UIApplication sharedApplication]delegate] window] rootViewController];
-    
+    UIViewController *mainViewController = (UIViewController *)[[[[UIApplication sharedApplication]delegate] window] rootViewController];
+
     // Create NavigationBarController and attach the current rootViewController
     self.navBarController = [[UINavigationController alloc] initWithRootViewController: mainViewController];
-    
+
     // NavigationBarController is the new rootViewController
     [[[[UIApplication sharedApplication]delegate] window] setRootViewController:navBarController];
-    
+
     // Set the scrollView for the TLYShyNavBarManager
     mainViewController.shyNavBarManager.scrollView = self.webView.scrollView;
 }
